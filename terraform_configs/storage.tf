@@ -2,8 +2,9 @@ resource "azurerm_storage_account" "la_storage" {
   name 					= "laterraform1"
   resource_group_name 	= "${azurerm_resource_group.terraform_rg.name}"
   location 				= "${var.location}"
-  account_type 			= "Standard_LRS"
-  
+  account_tier 			= "Standard"
+  account_replication = "LRS"
+
   tags {
 	group = "LinuxAcademy"
   }
